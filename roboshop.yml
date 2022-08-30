@@ -2,4 +2,4 @@
   hosts: "{{hosts}}"
   become: yes
   roles:
-    - "{{app_component_name}}"
+    - "{{APP_COMPONENT_ROLE}}"

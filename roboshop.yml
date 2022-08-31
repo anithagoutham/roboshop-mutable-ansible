@@ -1,3 +1,4 @@
-- name: test
-  debug:
-    msg: hello
+- name: setup roboshop
+  hosts: "{{HOSTS}}"
+  roles:
+    - "{{app_component_name}}"

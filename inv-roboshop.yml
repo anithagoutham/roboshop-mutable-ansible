@@ -9,7 +9,7 @@ user-dev.roboshop.internal
 [RABBITMQ]
 rabbitmq-dev.roboshop.internal
 [MONGODB]
-monodb-dev.roboshop.internal
+mongodb-dev.roboshop.internal
 [CATALOGUE]
 catalogue-dev.roboshop.internal
 [REDIS]

@@ -1,5 +1,5 @@
 [FRONTEND]
-  frontend-dev.roboshop.internal
+frontend-dev.roboshop.internal
 [CART]
 cart-dev.roboshop.internal
 [CATALOGUE]

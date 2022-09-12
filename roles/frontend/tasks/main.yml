@@ -30,10 +30,11 @@
     dest: /etc/nginx/default.d/roboshop.conf
 
 
-- name: reStart Nginx Service
+- name: Start Nginx Service
   ansible.builtin.systemd:
-    state: restarted
+    state: started
     name: nginx
+    enabled: yes
 
 
 

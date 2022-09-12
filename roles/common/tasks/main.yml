@@ -1,2 +1,2 @@
-- name: setup hostname
-  ansible.builtin.shell: set-hostname {{COMPONENT}}
+#- name: setup hostname
+ # ansible.builtin.shell: set-hostname {{COMPONENT}}

@@ -1,0 +1,6 @@
+[mongodb-org-4.2]
+name=mongodb repository
+baseurl=
+gpgcheck=1
+enabled=1
+gpgkey=

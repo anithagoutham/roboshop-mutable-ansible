@@ -7,9 +7,12 @@
 - name: install galaxy collection
   ansible.builtin.shell: ansible-galaxy collection install community.general
   when: APP_TYPE =="nodejs"
+  become_user: roboshop
 
 
-#- name: Install Prometheus Node Exporter
+
+
+    #- name: Install Prometheus Node Exporter
 
  # ansible.builtin.include_role:
   #  name: prometheus

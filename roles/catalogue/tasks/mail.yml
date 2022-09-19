@@ -1,5 +1,5 @@
 - name: setup nodejs repos
-  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+  ansible.builtin.shell:  curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
 - name: install nodejs
   ansible.builtin.yum:
@@ -27,3 +27,4 @@
     src: /tmp/catalogue-main/
     dest: /home/roboshop/catalogue
     remote_src: yes
+  become_user: roboshop

@@ -1,1 +1,2 @@
 component: mongodb
+APP_TYPE: database

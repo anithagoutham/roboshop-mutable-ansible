@@ -4,11 +4,15 @@
 - name: Setup Hostname
   ansible.builtin.shell: set-hostname {{component}}
 
+- name: install galaxy collection
+  ansible.builtin.shell: ansible-galaxy collection install community.general
+  when: APP_TYPE =="nodejs"
+
+
 #- name: Install Prometheus Node Exporter
 
  # ansible.builtin.include_role:
   #  name: prometheus
    # tasks_from: client
 
-- name: install galaxy collection
-  ansible.builtin.shell: ansible-galaxy collection install community.general
+

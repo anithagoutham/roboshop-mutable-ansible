@@ -1,3 +1,8 @@
+- name: Include Nodejs steps from common role
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: nodejs
+
 - name: setup nodejs repos
   ansible.builtin.shell:  curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 

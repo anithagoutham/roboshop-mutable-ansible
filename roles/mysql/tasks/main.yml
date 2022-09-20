@@ -9,6 +9,12 @@
       #- mysql-python
     state: installed
 
+- name: Start MySQL Service
+  ansible.builtin.systemd:
+    name: mysqld
+    state: restarted
+    enabled: yes
+
 - name: Load MYSQL Log File
   ansible.builtin.slurp:
       src: /var/log/mysqld.log
@@ -16,4 +22,4 @@
 
 - name: print
   debug:
-    msg: "{{mysql_log}}"
+    msg: "{{mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join(' ') | split(' ') }}"

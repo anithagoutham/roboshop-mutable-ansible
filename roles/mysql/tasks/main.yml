@@ -9,3 +9,11 @@
       #- mysql-python
     state: installed
 
+- name: Load MYSQL Log File
+  ansible.builtin.slurp:
+      src: /var/log/mysqld.log
+  register: mysql_log
+
+- name: print
+  debug:
+    msg: "{{mysql_log}}"

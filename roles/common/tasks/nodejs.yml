@@ -13,7 +13,7 @@
 
 - name: Install NodeJS dependencies
   community.general.npm:
-    path: /home/roboshop/{{COMPONENT}}
+    path: /home/roboshop/{{component}}
   become_user: roboshop
 
 - name: Include SystemD

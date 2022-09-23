@@ -6,14 +6,14 @@
     - botocore
     - boto3
 
-- name: Copy {{COMPONENT}} SystemD file
+- name: Copy {{component}} SystemD file
   ansible.builtin.template:
     src: systemd.service
-    dest: /etc/systemd/system/{{COMPONENT}}.service
+    dest: /etc/systemd/system/{{component}}.service
 
-- name: Restart {{COMPONENT}} Service
+- name: Restart {{component}} Service
   ansible.builtin.systemd:
-    name: "{{COMPONENT}}"
+    name: "{{component}}"
     state: restarted
     enabled: yes
     daemon-reload: yes

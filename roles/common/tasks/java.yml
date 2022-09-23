@@ -1,22 +1,20 @@
-- name: Add RooShop App USer
-  ansible.builtin.user:
-    name: roboshop
-    comment: RoboShop Application User
+- name: install maven
+  ansible.builtin.yum:
+    name: maven
+    state: installed
 
-- name: Remove Old App Content
-  ansible.builtin.file:
-    path: /home/roboshop/{{COMPONENT}}
-    state: absent
+- name: include app pre setup
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: app-pre-setup
 
-- name: Download {{COMPONENT}} Content & Extract it
-  ansible.builtin.unarchive:
-    src: "https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip"
-    dest: /tmp
-    remote_src: yes
-
-- name: Copy {{COMPONENT}} Content
-  ansible.builtin.copy:
-    src: /tmp/{{COMPONENT}}-main/
-    dest: /home/roboshop/{{COMPONENT}}
-    remote_src: yes
+- name: install maven dependencies
+  ansible.built.shell: mvn clean package && mv target/{{component}}-1.0.jar {{component}}.jar
+  args:
+      chdir: /home/roboshop/{{component}}
   become_user: roboshop
+
+- name: include systemd
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: systemd

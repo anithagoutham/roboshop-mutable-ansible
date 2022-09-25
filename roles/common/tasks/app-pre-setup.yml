@@ -5,7 +5,7 @@
 
 - name: Remove Old App Content
   ansible.builtin.file:
-    path: /home/roboshop/{{component}}
+    path: /home/roboshop/{{COMPONENT}}
     state: absent
 
 - name: Download {{component}} Content & Extract it

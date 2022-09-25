@@ -9,7 +9,7 @@
 - name: Include App Pre Setup
   ansible.builtin.include_role:
     name: common
-    tasks_from: app-pre-setup
+    tasks_from: dummy
 
 - name: Install NodeJS dependencies
   community.general.npm:

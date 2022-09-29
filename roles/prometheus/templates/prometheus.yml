@@ -10,21 +10,9 @@ alerting:
 
 rule_files:
 
-#scrape_configs:
- # - job_name: "prometheus"
- #   static_configs:
-#    - targets: ["172.31.80.254:9100"]
-
-
 scrape_configs:
-  - job_name: ec2-nodes
-    ec2_sd_configs:
-      - region: "us-east-1"
-        port: 9100
-        filters:
-          - name: "tag:Monitor"
-            values: [ "Yes" ]
+  - job_name: "prometheus"
+    static_configs:
+    - targets: ["172.31.83.80:9100"]
 
-    relabel_configs:
-    - source_labels: [__meta_ec2_tag_Name]
-      target_label: "component"
+

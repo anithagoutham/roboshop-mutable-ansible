@@ -1,2 +1,2 @@
-component: frontend
+COMPONENT: frontend
 APP_TYPE: nginx

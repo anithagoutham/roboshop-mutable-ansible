@@ -2,7 +2,7 @@
   shell: sudo labauto clean
 
 - name: Setup Hostname
-  ansible.builtin.shell: set-hostname {{component}}
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
 
 - name: Install Prometheus Node Exporter
   ansible.builtin.include_role:
@@ -12,7 +12,7 @@
 - name: Create rsyslog configuration
   ansible.builtin.template:
     src: rsyslog.conf
-    dest: /etc/rsyslog.d/{{component}}.conf
+    dest: /etc/rsyslog.d/{{COMPONENT}}.conf
   when: APP_TYPE == "java" or APP_TYPE == "python" or APP_TYPE == "nodejs"
 
 - name: Restart rsyslog
@@ -28,7 +28,6 @@
   loop:
     - botocore
     - boto3
-
 
 
 

@@ -30,7 +30,6 @@
     - boto3
 
 
-
     #- name: Install Prometheus Node Exporter
 
  # ansible.builtin.include_role:

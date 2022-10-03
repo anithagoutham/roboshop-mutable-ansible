@@ -1,2 +1,2 @@
-component: redis
+COMPONENT: redis
 APP_TYPE: database

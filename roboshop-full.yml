@@ -8,10 +8,10 @@
   become: yes
   roles:
     - mongodb
-#- name: Setup RoboShop
-#  hosts: CATALOGUE
- # become: yes
- # roles:
+  #- name: Setup RoboShop
+  #  hosts: CATALOGUE
+  # become: yes
+  # roles:
   #  - catalogue
 - name: Setup RoboShop
   hosts: REDIS
@@ -22,7 +22,7 @@
 #  hosts: USER
 #  become: yes
 #  roles:
- #   - user
+#   - user
 - name: Setup RoboShop
   hosts: MYSQL
   become: yes
@@ -30,21 +30,21 @@
     - mysql
 #- name: Setup RoboShop
 #  hosts: SHIPPING
- # become: yes
- # roles:
- #   - shipping
+# become: yes
+# roles:
+#   - shipping
 - name: Setup RoboShop
   hosts: RABBITMQ
   become: yes
   roles:
     - rabbitmq
-#- name: Setup RoboShop
- # hosts: PAYMENT
-  #become: yes
- # roles:
+    #- name: Setup RoboShop
+    # hosts: PAYMENT
+    #become: yes
+    # roles:
     - payment
-- name: Setup RoboShop
-  hosts: CART
-  become: yes
-  roles:
-    - cart
+#- name: Setup RoboShop
+ # hosts: CART
+  #become: yes
+  #roles:
+   # - cart

@@ -16,11 +16,7 @@
     path: /home/roboshop/{{COMPONENT}}
   become_user: roboshop
 
-- name: Download PEM file for DocumentDB
-  ansible.builtin.get_url:
-    url: https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
-    dest: /home/roboshop/{{COMPONENT}}/rds-combined-ca-bundle.pem
-  become_user: roboshop
+
 
 - name: Include SystemD
   ansible.builtin.include_role:

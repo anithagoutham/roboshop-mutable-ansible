@@ -8,8 +8,6 @@
     name: filebeat
     state: installed
 
-
-
 - name: Start filebeat
   ansible.builtin.systemd:
     name: filebeat

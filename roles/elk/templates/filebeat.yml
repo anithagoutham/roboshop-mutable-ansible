@@ -2,10 +2,11 @@ filebeat.inputs:
   - type: log
     enabled: true
     paths:
-      - {{LOG_FILE}}
-    fields:
-      component: {{COMPONENT}}
-      log_type: {{LOG_TYPE}}
+      - /var/log/nginx/access.log
+
+   # fields:
+    #  component: {{COMPONENT}}
+    #  log_type: {{LOG_TYPE}}
 
 output.logstash:
   hosts: ["logstash.roboshop.internal:5044"]
